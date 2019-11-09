@@ -28,7 +28,7 @@ after_success:
   fi`
 - export IMAGE_NAME=kimchitran/jblogger
 - pwd
-- ls
+- ls ./target
 - docker build -t $IMAGE_NAME:$COMMIT .
 - docker tag $IMAGE_NAME:$COMMIT $IMAGE_NAME:$TAG
 - docker push $IMAGE_NAME
