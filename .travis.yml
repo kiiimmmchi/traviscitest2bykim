@@ -28,8 +28,8 @@ after_success:
 #  fi`
 - export IMAGE_NAME=kimchitran/jblogger
 - docker build -t $IMAGE_NAME #:$COMMIT .
-- docker tag $IMAGE_NAME $IMAGE_NAME:latest #:$COMMIT $IMAGE_NAME:latest
-- docker commit $IMAGE_NAME $IMAGE_NAME:latest
+#- docker tag $IMAGE_NAME $IMAGE_NAME:latest #:$COMMIT $IMAGE_NAME:latest
+#- docker commit $IMAGE_NAME $IMAGE_NAME:latest
 - docker push $IMAGE_NAME:latest
 deploy:
   provider: heroku
