@@ -26,11 +26,12 @@ after_success:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
 #- export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH;
 #  fi`
-- export IMAGE_NAME=kimchitran/jblogger
-- docker build -t $IMAGE_NAME #:$COMMIT .
+#- export IMAGE_NAME=kimchitran/jblogger
+- docker build -t kimchitran/jblogger:latest
+#- docker build -t $IMAGE_NAME #:$COMMIT .
 #- docker tag $IMAGE_NAME $IMAGE_NAME:latest #:$COMMIT $IMAGE_NAME:latest
 #- docker commit $IMAGE_NAME $IMAGE_NAME:latest
-- docker push $IMAGE_NAME:latest
+- docker push kimchitran/jblogger:latest #$IMAGE_NAME:latest
 deploy:
   provider: heroku
   api_key: "$HEROKU_API_KEY"
