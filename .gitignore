@@ -1,0 +1,17 @@
+
+*.log
+
+.settings
+target
+.classpath
+.project
+.springBeans
+.tern-project
+
+bin
+build
+.gradle
+.idea
+*.iml
+/.apt_generated/
+nohup.out
