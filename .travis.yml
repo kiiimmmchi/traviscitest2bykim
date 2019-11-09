@@ -27,6 +27,8 @@ after_success:
 - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH;
   fi`
 - export IMAGE_NAME=kimchitran/jblogger
+- pwd
+- ls
 - docker build -t $IMAGE_NAME:$COMMIT .
 - docker tag $IMAGE_NAME:$COMMIT $IMAGE_NAME:$TAG
 - docker push $IMAGE_NAME
